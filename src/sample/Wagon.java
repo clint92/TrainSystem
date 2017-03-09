@@ -1,59 +1,53 @@
 package sample;
+import java.util.Random;
+
 public class Wagon {
+    private int light = 1;
+    private  int medium =3;
+    private int heavy = 5;
+    private String destination = "";
+    private String cargoType = "";
+    private int weight = 0;
 
-
-    String Destination;
-    String Priorty;
-    String cargotype;
-    double weight;
-
-    public Wagon(String destination, String priorty, String cargotype, double weight) {
-        Destination = destination;
-        Priorty = priorty;
-        this.cargotype = cargotype;
-        this.weight = weight;
+    public Wagon() {
+        this.destination = destination();
+        this.cargoType = cargoType();
+        this.weight = weight();
     }
 
+    public int weight() {
+        // light =1, medium =3,  heavy = 5
+        Random r = new Random();
+
+        int[] weight = {light, medium, heavy};
+
+        return weight [r.nextInt(2)]; // return light or medium or heavy
+    }
+
+    public String cargoType() {
+        Random ranCargoType =  new Random();
+        String[] cargoType = {"Wood","Steel","Oil","Gas Oil","Food","Cars","General Goods"};
+
+        return cargoType[ranCargoType.nextInt(6)];
+        //arraylist add wood ect. Math.ran return
+    }
+
+    public String destination (){
+        Random ranDestination =  new Random();
+        String[] destination = {"Hamburg Harbour","Scandinavia","Duisburg","Hannover","Berlin","Köln","Kassel","Leipzig","Frankfurt","Nürnberg","Munich"};
+
+        return destination[ranDestination.nextInt(11)];
+    }
 
     public String getDestination() {
-        return Destination;
+        return destination;
     }
 
-    public void setDestination(String destination) {
-        Destination = destination;
+    public String getCargoType() {
+        return cargoType;
     }
 
-    public String getPriorty() {
-        return Priorty;
-    }
-
-    public void setPriorty(String priorty) {
-        Priorty = priorty;
-    }
-
-    public String getCargotype() {
-        return cargotype;
-    }
-
-    public void setCargotype(String cargotype) {
-        this.cargotype = cargotype;
-    }
-
-    public double getWeight() {
+    public int getWeight() {
         return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    @Override
-    public String toString() {
-        return "Wagon{" +
-                "Destination='" + Destination + '\'' +
-                ", Priorty='" + Priorty + '\'' +
-                ", cargotype='" + cargotype + '\'' +
-                ", weight=" + weight +
-                '}';
     }
 }

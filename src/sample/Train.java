@@ -8,12 +8,12 @@ public class Train {
 
     int Track;
     int NumberOfWagons;
-    Stack<Vogn> CargoTrain;
+    Stack<Wagon> CargoTrain;
     String Arrival;
 
     public Train(int track) {
         Track = track;
-        CargoTrain = new Stack<Vogn>();
+        CargoTrain = new Stack<Wagon>();
 
 
     }
@@ -26,9 +26,9 @@ public class Train {
         Track = track;
     }
 
-     public void addWagon(Vogn vogn)
+     public void addWagon(Wagon wagon)
      {
-         CargoTrain.push(vogn);
+         CargoTrain.push(wagon);
          NumberOfWagons ++;
      }
 
@@ -40,11 +40,11 @@ public class Train {
         NumberOfWagons = numberOfWagons;
     }
 
-    public Stack<Vogn> getCargoTrain() {
+    public Stack<Wagon> getCargoTrain() {
         return CargoTrain;
     }
 
-    public void setCargoTrain(Stack<Vogn> cargoTrain) {
+    public void setCargoTrain(Stack<Wagon> cargoTrain) {
         CargoTrain = cargoTrain;
     }
 

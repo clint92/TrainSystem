@@ -27,7 +27,7 @@ public class Main extends Application {
        // int numberOfWagons = r.nextInt(10) + 1;
         Train T1 = new Train(track);
         for(int i = 0; i < 10; i ++){
-            T1.addWagon(new Vogn());
+            T1.addWagon(new Wagon());
            // track++;
         }
         //System.out.println(T1.getCargoTrain());
