@@ -4,17 +4,18 @@ import java.util.Stack;
 /**
  * Created by A.A on 3/7/2017.
  */
-public class ArrivalTrain {
+public class Train {
 
     int Track;
     int NumberOfWagons;
-    Stack<Wagon> CargoTrain;
+    Stack<Vogn> CargoTrain;
     String Arrival;
 
-    public ArrivalTrain(int track, int numberOfWagons, Stack<Wagon> cargoTrain) {
+    public Train(int track) {
         Track = track;
-        NumberOfWagons = numberOfWagons;
-        CargoTrain = cargoTrain;
+        CargoTrain = new Stack<Vogn>();
+
+
     }
 
     public int getTrack() {
@@ -25,6 +26,12 @@ public class ArrivalTrain {
         Track = track;
     }
 
+     public void addWagon(Vogn vogn)
+     {
+         CargoTrain.push(vogn);
+         NumberOfWagons ++;
+     }
+
     public int getNumberOfWagons() {
         return NumberOfWagons;
     }
@@ -33,17 +40,17 @@ public class ArrivalTrain {
         NumberOfWagons = numberOfWagons;
     }
 
-    public Stack<Wagon> getCargoTrain() {
+    public Stack<Vogn> getCargoTrain() {
         return CargoTrain;
     }
 
-    public void setCargoTrain(Stack<Wagon> cargoTrain) {
+    public void setCargoTrain(Stack<Vogn> cargoTrain) {
         CargoTrain = cargoTrain;
     }
 
     @Override
     public String toString() {
-        return "ArrivalTrain{" +
+        return "Train{" +
                 "Track=" + Track +
                 ", NumberOfWagons=" + NumberOfWagons +
                 ", CargoTrain=" + CargoTrain +

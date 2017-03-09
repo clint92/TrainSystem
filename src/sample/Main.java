@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Main extends Application {
 
     @Override
@@ -18,6 +21,16 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        ArrayList<Train> tracks = new ArrayList<>();
+        Random r = new Random();
+        int track = 1;//r.nextInt(10) + 1;
+       // int numberOfWagons = r.nextInt(10) + 1;
+        Train T1 = new Train(track);
+        for(int i = 0; i < 10; i ++){
+            T1.addWagon(new Vogn());
+           // track++;
+        }
+        //System.out.println(T1.getCargoTrain());
         launch(args);
     }
 }
